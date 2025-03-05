@@ -2,9 +2,12 @@
 import './style.css';
 // Firebase App (the core Firebase SDK) is always required
 import { initializeApp } from 'firebase/app';
+initializeApp(firebaseConfig);
+auth = getAuth();
 
 // Add the Firebase products and methods that you want to use
-import {} from 'firebase/auth';
+import { getAuth, EmailAuthProvider } from 'firebase/auth';
+
 import {} from 'firebase/firestore';
 
 import * as firebaseui from 'firebaseui';
@@ -27,9 +30,17 @@ let db, auth;
 
 async function main() {
   // Add Firebase project configuration object here
-  const firebaseConfig = {};
+  const firebaseConfig = {
+    apiKey: "AIzaSyDa11azOuUhlLTKY8XLC9WVKXcUuyarcCE",
+    authDomain: "fir-web-codelab-a8f06.firebaseapp.com",
+    projectId: "fir-web-codelab-a8f06",
+    storageBucket: "fir-web-codelab-a8f06.firebasestorage.app",
+    messagingSenderId: "777521168157",
+    appId: "1:777521168157:web:95692e90db4da6e80dabf4"
+  };
 
   // initializeApp(firebaseConfig);
+  const app = initializeApp(firebaseConfig);
 
   // FirebaseUI config
   const uiConfig = {
@@ -48,5 +59,6 @@ async function main() {
   };
 
   // const ui = new firebaseui.auth.AuthUI(auth);
+  const ui = new firebaseui.auth.AuthUI(auth);
 }
 main();
